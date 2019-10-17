@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PA5Try2</string>
+    <string name="GameRules">Here are the rules of TicTacToe: One player is angels,
+    and the second player is demons. Take turns playing in a grid cell until one
+    player has 3 of their icons in a row horizontally, vertically, or diagonally. If nobody wins,
+    the game ends in a tie.</string>
+</resources>

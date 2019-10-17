@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="3"
+    android:background="#000000"
+    tools:context=".PlayGameActivity">
+
+    <ImageView
+        android:id="@+id/zero-zero"
+        android:tag="00"
+        android:src="#ffffff"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_rowSpan="1"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:onClick="onButtonClick"
+        android:layout_rowWeight="1" />
+
+    <ImageView
+        android:id="@+id/one-zero"
+        android:tag="10"
+        android:src="#ffffff"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_rowSpan="1"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:layout_rowWeight="1"
+        android:onClick="onButtonClick"/>
+
+    <ImageView
+        android:id="@+id/two-zero"
+        android:tag="20"
+        android:src="#ffffff"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_rowSpan="1"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:layout_rowWeight="1"
+        android:onClick="onButtonClick"/>
+
+    <ImageView
+        android:id="@+id/zero-one"
+        android:tag="01"
+        android:src="#ffffff"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_rowSpan="1"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:layout_rowWeight="1"
+        android:onClick="onButtonClick"/>
+
+    <ImageView
+        android:id="@+id/one-one"
+        android:tag="11"
+        android:src="#ffffff"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_rowSpan="1"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_margin="5dp"
+        android:onClick="onButtonClick"/>
+
+    <ImageView
+        android:id="@+id/two-one"
+        android:tag="21"
+        android:src="#ffffff"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_rowSpan="1"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:layout_rowWeight="1"
+        android:onClick="onButtonClick"/>
+
+    <ImageView
+        android:id="@+id/zero-two"
+        android:tag="02"
+        android:src="#ffffff"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_rowSpan="1"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:layout_rowWeight="1"
+        android:onClick="onButtonClick"/>
+
+    <ImageView
+        android:id="@+id/one-two"
+        android:tag="12"
+        android:src="#ffffff"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_rowSpan="1"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:layout_rowWeight="1"
+        android:onClick="onButtonClick"/>
+
+    <ImageView
+        android:id="@+id/two-two"
+        android:tag="22"
+        android:src="#ffffff"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_rowSpan="1"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:layout_rowWeight="1"
+        android:onClick="onButtonClick"/>
+
+    <ImageView
+        android:id="@+id/previewInfo"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_columnSpan="2"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="5dp"
+        android:textColor="#ffffff"
+        android:text="Here is some information about the how the game is going"
+        android:gravity="center"
+        android:textSize="20dp"/>
+
+    <Button
+        android:id="@+id/backToMainButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnSpan="1"
+        android:layout_rowWeight=".5"
+        android:layout_margin="5dp"
+        android:layout_columnWeight="1"
+        android:text="Back to Main Menu"/>
+
+    <Button
+        android:id="@+id/newGameButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnSpan="2"
+        android:layout_rowWeight=".5"
+        android:layout_margin="5dp"
+        android:layout_columnWeight="1"
+        android:visibility="invisible"
+        android:text="New Game"/>
+
+
+</GridLayout>
