@@ -1,7 +1,12 @@
 package com.example.pa5try2;
+
+import android.widget.Toast;
+
 public class TicTacToeBoard {
     private int N;
     private Cell[][] grid;
+    protected boolean whoTurn; //true if whoTurn is
+    private char playerSymbol;
 
     //default constructor - never called, but is important as a backup.
     public TicTacToeBoard() {
@@ -22,52 +27,33 @@ public class TicTacToeBoard {
 
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++)
-                grid[i][j] = new Cell(i, j, '-'); //create new cells in every location, idealized with '-'
+                grid[i][j] = new Cell(i, j, '-'); //create new cells in every location, populated with '-'
         }
-
-
     }
 
-    //overriding the toString method to print out the board
-   /* @Override
-    public String toString() {
-        String gridStr = " ";
-
-        for (int i = 0; i < N; i++) {
-            gridStr += " " + i;
-        }
-
-        for (int i = 0; i < N; i++) {
-            gridStr += "\n" + i + " ";
-            for (int j = 0; j < N; j++) {
-                gridStr += grid[j][i].getSymbol() + " "; //append, rather than add
-            }
-        }
-        return gridStr;
-    }*/
-
-
-//   public boolean playGame(Coordinates coordinates){
-//       if(isValidMove(coordinates) && ! isWinner())
-//   }
 
 
     //if the coordinate given by user is blank, allow them to play there, otherwise return false
     public boolean isValidMove(Coordinates coordinates) {
         if (grid[coordinates.getRow()][coordinates.getColumn()].getSymbol() != 'X' &&
-                grid[coordinates.getRow()][coordinates.getColumn()].getSymbol() != 'O')
+                grid[coordinates.getRow()][coordinates.getColumn()].getSymbol() != 'O') {
             return true;
+        }
 
         return false;
     }
 
     //as long as isValidMove() returns true, then go ahead and put their char in the location they want
-    public boolean makeMove(Coordinates coordinates, char playerSymbol) {
+    public boolean makeMove(Coordinates coordinates) {
+        if(whoTurn)
+            playerSymbol = 'X';
+        else
+            playerSymbol = 'O';
+
         if (isValidMove(coordinates)) {
             grid[coordinates.getRow()][coordinates.getColumn()].setSymbol(playerSymbol);
             return true;
         } else {
-            System.out.println("Invalid Move, try again.");
             return false;
         }
     }
@@ -75,15 +61,18 @@ public class TicTacToeBoard {
 
     //if a row, a column, or one of the two diagonals returns true, then the isWinner function will return true, meaning
     //someone has won the game
-    boolean isWinner(char playerSymbol) {
-        if(checkTopLeftDownDiag(playerSymbol))
+    boolean isWinner() {
+        if(checkTopLeftDownDiag('X') || checkTopLeftDownDiag('O')) {
+            //Toast.makeText(null, "Top-left diag winner", Toast.LENGTH_SHORT).show();
             return true;
-        else if (checkBottomLeftUpDiag(playerSymbol))
+        } else if (checkBottomLeftUpDiag('X') || checkBottomLeftUpDiag('O')) {
             return true;
-        else if (checkRows(playerSymbol))
+        } else if (checkRows('X') || checkRows('O')){
             return true;
-        else if (checkColumns(playerSymbol))
+        }
+        else if (checkColumns('X') || checkColumns('O')){
             return true;
+        }
 
         return false;
     }
