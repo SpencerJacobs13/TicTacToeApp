@@ -1,5 +1,16 @@
 package com.example.pa5try2;
 
+/*
+    This program is a simple app that allows users to enter names, enter a new
+    activity which is a 3x3 TicTacToe board game using two different icons
+    CPSC312-01, Fall 2019
+    Programming Assignment #5
+    No sources to cite
+
+    @author Spencer Jacobs
+    @version v1.0 10/21/19
+ */
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
