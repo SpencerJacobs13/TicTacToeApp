@@ -79,35 +79,30 @@ public class TicTacToeBoard {
 
     //iterates through each row to see if the player's symbol occupies every spot in a row
     private boolean checkRows(char playerSymbol) {
-        int count = 0;
-        for (int j = 0; j < 3; j++) {
-            for (int i = 0; i < 3; i++) {
-                if (grid[i][j].getSymbol() == playerSymbol) {
-                    count++;
-                } else
-                    return false;
+            int count = 0;
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
+                    if (grid[j][i].getSymbol() == playerSymbol)
+                        count++;
+                }
+                if (count == N)
+                    return true;
+                count = 0;
             }
-            //if count is equal to the size of the row, then the player has filled a row
-            if(count == 3)
-                return true;
-            count = 0;
-        }
-        return false;
+            return false;
     }
 
     //check columns individually
     private boolean checkColumns(char playerSymbol) {
         int count = 0;
-        for (int j = 0; j < N; j++) {
-            for (int i = 0; i < N; i++) {
-                if (grid[j][i].getSymbol() == playerSymbol) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (grid[i][j].getSymbol() == (playerSymbol))
                     count++;
-                } else
-                    return false;
             }
-                if (count == N)
-                    return true;
-                count = 0;
+            if (count == N)
+                return true;
+            count = 0;
         }
         return false;
     }

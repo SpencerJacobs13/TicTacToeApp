@@ -116,6 +116,8 @@ public class PlayGameActivity extends AppCompatActivity {
         //create coordinates and pass them into the isValidMove
         Coordinates coord = new Coordinates(x, y);
 
+        Toast.makeText(this, "x: " + x + " y: " + y, Toast.LENGTH_SHORT).show();
+
         if(board.makeMove(coord)){
             //game logic
             if(!board.whoTurn) {
