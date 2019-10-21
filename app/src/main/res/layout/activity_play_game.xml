@@ -10,7 +10,7 @@
     tools:context=".PlayGameActivity">
 
     <ImageView
-        android:id="@+id/zero-zero"
+        android:id="@+id/zerozero"
         android:tag="00"
         android:src="#ffffff"
         android:layout_height="0dp"
@@ -23,7 +23,7 @@
         android:layout_rowWeight="1" />
 
     <ImageView
-        android:id="@+id/one-zero"
+        android:id="@+id/onezero"
         android:tag="10"
         android:src="#ffffff"
         android:layout_height="0dp"
@@ -36,7 +36,7 @@
         android:onClick="onButtonClick"/>
 
     <ImageView
-        android:id="@+id/two-zero"
+        android:id="@+id/twozero"
         android:tag="20"
         android:src="#ffffff"
         android:layout_height="0dp"
@@ -49,7 +49,7 @@
         android:onClick="onButtonClick"/>
 
     <ImageView
-        android:id="@+id/zero-one"
+        android:id="@+id/zeroone"
         android:tag="01"
         android:src="#ffffff"
         android:layout_height="0dp"
@@ -62,7 +62,7 @@
         android:onClick="onButtonClick"/>
 
     <ImageView
-        android:id="@+id/one-one"
+        android:id="@+id/oneone"
         android:tag="11"
         android:src="#ffffff"
         android:layout_height="0dp"
@@ -75,7 +75,7 @@
         android:onClick="onButtonClick"/>
 
     <ImageView
-        android:id="@+id/two-one"
+        android:id="@+id/twoone"
         android:tag="21"
         android:src="#ffffff"
         android:layout_height="0dp"
@@ -88,7 +88,7 @@
         android:onClick="onButtonClick"/>
 
     <ImageView
-        android:id="@+id/zero-two"
+        android:id="@+id/zerotwo"
         android:tag="02"
         android:src="#ffffff"
         android:layout_height="0dp"
@@ -101,7 +101,7 @@
         android:onClick="onButtonClick"/>
 
     <ImageView
-        android:id="@+id/one-two"
+        android:id="@+id/onetwo"
         android:tag="12"
         android:src="#ffffff"
         android:layout_height="0dp"
@@ -114,7 +114,7 @@
         android:onClick="onButtonClick"/>
 
     <ImageView
-        android:id="@+id/two-two"
+        android:id="@+id/twotwo"
         android:tag="22"
         android:src="#ffffff"
         android:layout_height="0dp"
@@ -144,9 +144,8 @@
         android:layout_columnWeight="1"
         android:layout_margin="5dp"
         android:textColor="#ffffff"
-        android:text="Here is some information about the how the game is going"
         android:gravity="center"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/backToMainButton"
@@ -156,7 +155,7 @@
         android:layout_rowWeight=".5"
         android:layout_margin="5dp"
         android:layout_columnWeight="1"
-        android:text="Back to Main Menu"/>
+        android:text="@string/backToMainMenu"/>
 
     <Button
         android:id="@+id/newGameButton"
@@ -167,7 +166,7 @@
         android:layout_margin="5dp"
         android:layout_columnWeight="1"
         android:visibility="invisible"
-        android:text="New Game"/>
+        android:text="@string/newGame"/>
 
 
 </GridLayout>

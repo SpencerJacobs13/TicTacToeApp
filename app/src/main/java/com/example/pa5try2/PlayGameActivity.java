@@ -37,7 +37,7 @@ public class PlayGameActivity extends AppCompatActivity {
             name1 = intent.getStringExtra("player1Name");
             name2 = intent.getStringExtra("player2Name");
 
-            statusLabel.setText(name1 + ", you're up!");
+            statusLabel.setText(name1 + getString(R.string.yourTurn));
             previewInfo.setImageResource(R.drawable.angel);
         }
 
@@ -65,7 +65,7 @@ public class PlayGameActivity extends AppCompatActivity {
                 //clear the images
                 resetBoardImages();
 
-                statusLabel.setText(name1 + ", you're up!");
+                statusLabel.setText(name1 + getString(R.string.yourTurn));
                 previewInfo.setImageResource(R.drawable.angel);
 
             }
@@ -73,32 +73,33 @@ public class PlayGameActivity extends AppCompatActivity {
 
     }
 
+    //resetting the images back to a blank white canvas. also making each ImageView clickable again
     private void resetBoardImages(){
-        ImageView zerozero = (ImageView) findViewById(R.id.zero_zero);
+        ImageView zerozero = (ImageView) findViewById(R.id.zerozero);
         zerozero.setImageResource(R.drawable.white);
         zerozero.setClickable(true);
-        ImageView zeroone = (ImageView) findViewById(R.id.zero_one);
+        ImageView zeroone = (ImageView) findViewById(R.id.zeroone);
         zeroone.setImageResource(R.drawable.white);
         zeroone.setClickable(true);
-        ImageView zerotwo = (ImageView) findViewById(R.id.zero_two);
+        ImageView zerotwo = (ImageView) findViewById(R.id.zerotwo);
         zerotwo.setImageResource(R.drawable.white);
         zerotwo.setClickable(true);
-        ImageView onezero = (ImageView) findViewById(R.id.one_zero);
+        ImageView onezero = (ImageView) findViewById(R.id.onezero);
         onezero.setImageResource(R.drawable.white);
         onezero.setClickable(true);
-        ImageView oneone = (ImageView) findViewById(R.id.one_one);
+        ImageView oneone = (ImageView) findViewById(R.id.oneone);
         oneone.setImageResource(R.drawable.white);
         oneone.setClickable(true);
-        ImageView onetwo = (ImageView) findViewById(R.id.one_two);
+        ImageView onetwo = (ImageView) findViewById(R.id.onetwo);
         onetwo.setImageResource(R.drawable.white);
         onetwo.setClickable(true);
-        ImageView twozero = (ImageView) findViewById(R.id.two_zero);
+        ImageView twozero = (ImageView) findViewById(R.id.twozero);
         twozero.setImageResource(R.drawable.white);
         twozero.setClickable(true);
-        ImageView twoone = (ImageView) findViewById(R.id.two_one);
+        ImageView twoone = (ImageView) findViewById(R.id.twoone);
         twoone.setImageResource(R.drawable.white);
         twoone.setClickable(true);
-        ImageView twotwo = (ImageView) findViewById(R.id.two_two);
+        ImageView twotwo = (ImageView) findViewById(R.id.twotwo);
         twotwo.setImageResource(R.drawable.white);
         twotwo.setClickable(true);
     }
@@ -116,30 +117,29 @@ public class PlayGameActivity extends AppCompatActivity {
         //create coordinates and pass them into the isValidMove
         Coordinates coord = new Coordinates(x, y);
 
-        Toast.makeText(this, "x: " + x + " y: " + y, Toast.LENGTH_SHORT).show();
-
+        //if the move can legally be made, change the info and update the board
         if(board.makeMove(coord)){
             //game logic
             if(!board.whoTurn) {
                 button.setImageResource(R.drawable.angel);
-                statusLabel.setText(name2 + ", you're up!");
+                statusLabel.setText(name2 + getString(R.string.yourTurn));
                 previewInfo.setImageResource(R.drawable.demon);
                 board.whoTurn = !board.whoTurn;
                 button.setClickable(false);
             }
             else {
                 button.setImageResource(R.drawable.demon);
-                statusLabel.setText(name1 + ", you're up!");
+                statusLabel.setText(name1 + getString(R.string.yourTurn));
                 previewInfo.setImageResource(R.drawable.angel);
                 board.whoTurn = !board.whoTurn;
                 button.setClickable(false);
             }
         }
         else //if the move is not valid
-            Toast.makeText(this, "Invalid Move. Try Again", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.invalidName), Toast.LENGTH_LONG).show();
 
         if(board.isWinner() && board.whoTurn){
-            statusLabel.setText(name1 + " wins, good work!");
+            statusLabel.setText(name1 + " " + getString(R.string.winnerMessage));
             previewInfo.setImageResource(R.drawable.angel);
             newGameButton.setVisibility(View.VISIBLE);
             setUnclickable(view);
@@ -147,7 +147,7 @@ public class PlayGameActivity extends AppCompatActivity {
         }
 
         if(board.isWinner() && !board.whoTurn) {
-            statusLabel.setText(name2 + " wins, excellent game!");
+            statusLabel.setText(name2 + " " + getString(R.string.winnerMessage));
             previewInfo.setImageResource(R.drawable.demon);
             newGameButton.setVisibility(View.VISIBLE);
             setUnclickable(view);
@@ -155,7 +155,7 @@ public class PlayGameActivity extends AppCompatActivity {
         }
 
         if(board.checkBoardFull()) {
-            statusLabel.setText("Uh oh! The game has ended in a draw!");
+            statusLabel.setText(getString(R.string.gameDraw));
             newGameButton.setVisibility(View.VISIBLE);
             setUnclickable(view);
             return;
@@ -163,24 +163,25 @@ public class PlayGameActivity extends AppCompatActivity {
 
     }
 
-    public void setUnclickable(View view){
-            ImageView zerozero = (ImageView) findViewById(R.id.zero_zero);
+    //when a game is over, set all ImageViews to be unclickable
+    private void setUnclickable(View view){
+            ImageView zerozero = (ImageView) findViewById(R.id.zerozero);
             zerozero.setClickable(false);
-            ImageView zeroone = (ImageView) findViewById(R.id.zero_one);
+            ImageView zeroone = (ImageView) findViewById(R.id.zeroone);
             zeroone.setClickable(false);
-            ImageView zerotwo = (ImageView) findViewById(R.id.zero_two);
+            ImageView zerotwo = (ImageView) findViewById(R.id.zerotwo);
             zerotwo.setClickable(false);
-            ImageView onezero = (ImageView) findViewById(R.id.one_zero);
+            ImageView onezero = (ImageView) findViewById(R.id.onezero);
             onezero.setClickable(false);
-            ImageView oneone = (ImageView) findViewById(R.id.one_one);
+            ImageView oneone = (ImageView) findViewById(R.id.oneone);
             oneone.setClickable(false);
-            ImageView onetwo = (ImageView) findViewById(R.id.one_two);
+            ImageView onetwo = (ImageView) findViewById(R.id.onetwo);
             onetwo.setClickable(false);
-            ImageView twozero = (ImageView) findViewById(R.id.two_zero);
+            ImageView twozero = (ImageView) findViewById(R.id.twozero);
             twozero.setClickable(false);
-            ImageView twoone = (ImageView) findViewById(R.id.two_one);
+            ImageView twoone = (ImageView) findViewById(R.id.twoone);
             twoone.setClickable(false);
-            ImageView twotwo = (ImageView) findViewById(R.id.two_two);
+            ImageView twotwo = (ImageView) findViewById(R.id.twotwo);
             twotwo.setClickable(false);
     }
 }//end class

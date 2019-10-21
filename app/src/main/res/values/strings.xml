@@ -3,5 +3,16 @@
     <string name="GameRules">Here are the rules of TicTacToe: One player is angels,
     and the second player is demons. Take turns playing in a grid cell until one
     player has 3 of their icons in a row horizontally, vertically, or diagonally. If nobody wins,
-    the game ends in a tie.</string>
+    the game ends in a tie, at which point a new game can - and should - be started. Game on!</string>
+    <string name="yourTurn">, you are up!</string>
+    <string name="invalidName">Invalid Move. Try Again</string>
+    <string name="winnerMessage"> wins, good work!</string>
+    <string name="gameDraw">Uh oh! The game has ended in a draw!</string>
+    <string name="backToMainMenu">Back to Main Menu</string>
+    <string name="newGame">New Game</string>
+    <string name="p1NameHere">Player 1 Name:</string>
+    <string name="p2NameHere">Player 2 Name:</string>
+    <string name="p1NameHint">Player 1 Name Here</string>
+    <string name="p2NameHint">Player 2 Name Here</string>
+    <string name="nextButton">Next</string>
 </resources>
