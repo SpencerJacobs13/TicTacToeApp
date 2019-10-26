@@ -6,9 +6,9 @@ A simple TicTacToe game that makes use of two activities. The first activity is 
 By nature, Android Studio projects are massive, so here are a couple of file locations that are important
 and noteworthy.
 
+* **Java Class Files** *(PA5Try2/app/src/main/java/com/example/pa5try2/)*
 * **main_activity.xml** *(PA5Try2/app/src/main/res/layout/)*
 * **activity_play_game.xml** *(PA5Try2/app/src/main/res/layout/)*
-* **Java Class Files** *(PA5Try2/app/src/main/java/com/example/pa5try2/)*
 * **JavaDocFiles** *(PA5Try2/app/src/main/res/layout/index-files/)*  
 
 
@@ -19,15 +19,16 @@ as the game is played. Together, the TicTacToeBoard, Cell, and Coordinates class
   
 There are two activities involved with the game, each one with their own corresponding XML files that determines their layout of elements.
 The first activity just shows the rules of TicTacToe in case someone does not know how to play, and accepts user input for the names of player 1 and 2.  
+
 The second activity is where the majority of the game happens. It is where the users click on a location to put their mark there. 
 Player 1 is represented as an angel icon and player 2 is represented by a devil icon. As soon as a winner is determined or the board is full
 with no winner, a "New Game" button appears and allows the user to start a new game. At any point during the game, the user can click the 
 "Back to Main Menu" button and refresh themselves on the rules, or can change the name of player 1 or 2.
 
-## MVC Architecture  ##
+## MVC Architecture
 I chose to design this project with an Model-View-Architecture in oder to increase modularity, encapsulation, and improve expandability.
 
-### Model  ###
+### Model
 (TicTacToeBoard etc)  
 The model is the mechanics behind the game. It is the logic that makes the game work the way that it should.
 It contains all of the logic-coding that accepts information from the controller and determines whose turn it is, 
@@ -40,7 +41,7 @@ The view is what the user sees and interacts with. It is made up of Buttons, Edi
 It is designed and oriented in the XML file that is associated with each activity.  
 (Note: the view cannot communicate directly to the model and vice-versa. It must go through the controller to do so)
 
-### Controller  ###
+### Controller
 (PlayGameActivity)  
 The controller is the middle-man between the view and the model. The controller speaks directly with both the view and model, because
 they cannot communicate with each other. In order for the controller to do its job, it must have both a View object as well
