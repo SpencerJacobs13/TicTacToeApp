@@ -8,7 +8,7 @@ and noteworthy.
 * **Java Class Files** *(TicTacToeApp/app/src/main/java/com/example/pa5try2/)*
 * **main_activity.xml** *(TicTacToeApp/app/src/main/res/layout/)*
 * **activity_play_game.xml** *(TicTacToeApp/app/src/main/res/layout/)*
-* **JavaDocFiles** *(TicTacToeApp/app/src/main/res/layout/index-files/)*  
+* **JavaDoc Files** *(TicTacToeApp/app/src/main/res/layout/index-files/)*  
 
 
 ## Overview ##
