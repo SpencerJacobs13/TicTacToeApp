@@ -5,10 +5,10 @@
 By nature, Android Studio projects are massive, so here are a couple of file locations that are important
 and noteworthy.
 
-* **Java Class Files** *(PA5Try2/app/src/main/java/com/example/pa5try2/)*
-* **main_activity.xml** *(PA5Try2/app/src/main/res/layout/)*
-* **activity_play_game.xml** *(PA5Try2/app/src/main/res/layout/)*
-* **JavaDocFiles** *(PA5Try2/app/src/main/res/layout/index-files/)*  
+* **Java Class Files** *(TicTacToeApp/app/src/main/java/com/example/pa5try2/)*
+* **main_activity.xml** *(TicTacToeApp/app/src/main/res/layout/)*
+* **activity_play_game.xml** *(TicTacToeApp/app/src/main/res/layout/)*
+* **JavaDocFiles** *(TicTacToeApp/app/src/main/res/layout/index-files/)*  
 
 
 ## Overview ##
