@@ -1,6 +1,5 @@
 # TicTacToeApp #
 --------------
-A simple TicTacToe game that makes use of two activities. The first activity is a simple "login" screen that asks the two players for their names. The second activity is the game logic where users take turns playing chosen locations and are updated on the game progress.
 
 # File Locations: #
 By nature, Android Studio projects are massive, so here are a couple of file locations that are important
