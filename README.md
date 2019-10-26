@@ -2,6 +2,16 @@
 --------------
 A simple TicTacToe game that makes use of two activities. The first activity is a simple "login" screen that asks the two players for their names. The second activity is the game logic where users take turns playing chosen locations and are updated on the game progress.
 
+# File Locations: #
+By nature, Android Studio projects are massive, so here are a couple of file locations that are important
+and noteworthy.
+
+* **main_activity.xml**
+* **activity_play_game.xml** *(PA5Try2/app/src/main/res/layout/)*
+* **Java Class Files** *(PA5Try2/app/src/main/java/com/example/pa5try2/)*
+* **JavaDocFiles** *(PA5Try2/app/src/main/res/layout/index-files/)*  
+
+
 ## Overview ##
 This project is designed with an MVC Architecture. The game board is comprised of a 2D array of Cell objects, which themselves consist of a Coordinate object
 and a symbol. Each Cell in the 2D array is populated with a blank '-' character to begin with, and is updated with either an 'X' or an 'O' 
@@ -34,7 +44,8 @@ It is designed and oriented in the XML file that is associated with each activit
 (PlayGameActivity)  
 The controller is the middle-man between the view and the model. The controller speaks directly with both the view and model, because
 they cannot communicate with each other. In order for the controller to do its job, it must have both a View object as well
-as a model object.  
+as a model object.
+
 
 
 
